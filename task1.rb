@@ -1,5 +1,9 @@
 string = ARGV[0]
 
+if !string
+	exit
+end
+
 if string.length > 10000
 	exit
 end	
