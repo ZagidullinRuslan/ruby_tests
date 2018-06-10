@@ -12,9 +12,27 @@ end
 totalSeconds = arg1 + arg2
 totalMinutes = totalSeconds / 60
 totalHours = totalMinutes / 60
+totalDays = totalHours / 24
 
-hours = totalHours
-minutes = totalMinutes - hours*60
-seconds = totalSeconds - hours*60*60 - minutes*60 
+days = totalDays
+hours = totalHours - days*24
+minutes = totalMinutes - days*24*60 - hours*60
+seconds = totalSeconds - days*24*60*60 - hours*60*60 - minutes*60 
 
-puts hours.to_s + " час " + minutes.to_s + " минут " +  seconds.to_s + " секунд"
+resultString = ""
+
+if days > 0
+	resultString += days.to_s + " дней "
+end
+
+if days > 0 || hours > 0
+	resultString += hours.to_s + " час "
+end
+
+if days > 0 || hours > 0 || minutes > 0
+	resultString += minutes.to_s + " минут "
+end
+
+resultString += seconds.to_s + " секунд"
+
+puts resultString
