@@ -21,18 +21,52 @@ seconds = totalSeconds - days*24*60*60 - hours*60*60 - minutes*60
 
 resultString = ""
 
+daysArray = [' день ', ' дня ', ' дней ']
+hoursArray = [' час ', ' часа ', ' часов ']
+minutesArray = [' минута ', ' минуты ', ' минут ']
+secondsArray = [' секунда', ' секунды', ' секунд']
+
+$firstFormEnding = [1]
+$secondFormEnding = [2,3,4] 
+$thirdFormEnding = [0,5,6,7,8,9,11,12,13,14]
+
+def gettFormId(num)
+	for i in $thirdFormEnding
+		if (num-i)%10 === 0 && (num-i) >= 0
+			return 2 
+		end 
+	end	
+	for i in $secondFormEnding
+		if (num-i)%10 === 0 && (num-i) >= 0
+			return 1 
+		end 
+	end	
+	for i in $firstFormEnding
+		if (num-i)%10 === 0 && (num-i) >= 0
+			return 0 
+		end 
+	end	
+	return 2
+end
+
 if days > 0
-	resultString += days.to_s + " дней "
+	formId = gettFormId(days)
+	
+	resultString += days.to_s + daysArray[formId]
 end
 
 if days > 0 || hours > 0
-	resultString += hours.to_s + " час "
+	formId = gettFormId(hours)
+	
+	resultString += hours.to_s + hoursArray[formId]
 end
 
 if days > 0 || hours > 0 || minutes > 0
-	resultString += minutes.to_s + " минут "
+	formId = gettFormId(minutes)
+	
+	resultString += minutes.to_s + minutesArray[formId]
 end
 
-resultString += seconds.to_s + " секунд"
+resultString += seconds.to_s + secondsArray[gettFormId(seconds)]
 
 puts resultString
