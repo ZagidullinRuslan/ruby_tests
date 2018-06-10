@@ -28,9 +28,15 @@ secondsArray = [' секунда', ' секунды', ' секунд']
 
 $firstFormEnding = [1]
 $secondFormEnding = [2,3,4] 
-$thirdFormEnding = [0,5,6,7,8,9,11,12,13,14]
+$thirdFormEnding = [0,5,6,7,8,9]
+$thirdFormEndingExtra = [11,12,13,14]
 
 def gettFormId(num)
+	for i in $thirdFormEndingExtra
+		if i === num
+			return 2
+		end
+	end
 	for i in $thirdFormEnding
 		if (num-i)%10 === 0 && (num-i) >= 0
 			return 2 
