@@ -10,3 +10,11 @@ if arg1 > 100000 || arg1 < 1 || arg2 > 100000 || arg2 < 1
 end
  
 totalSeconds = arg1 + arg2
+totalMinutes = totalSeconds / 60
+totalHours = totalMinutes / 60
+
+hours = totalHours
+minutes = totalMinutes - hours*60
+seconds = totalSeconds - hours*60*60 - minutes*60 
+
+puts hours.to_s + " час " + minutes.to_s + " минут " +  seconds.to_s + " секунд"
