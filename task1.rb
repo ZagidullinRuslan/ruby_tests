@@ -1,12 +1,12 @@
 string = ARGV[0]
 
-if !string
-	exit
-end
+# if !string
+	# exit
+# end
 
-if string.length > 10000
-	exit
-end	
+# if string.length > 10000
+	# exit
+# end	
 
 if string.length === 1 || string.length === 0
 	puts "YES"

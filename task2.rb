@@ -1,6 +1,6 @@
-if ARGV.length != 3
-	exit
-end
+# if ARGV.length != 3
+	# exit
+# end
 
 day = ARGV[0].to_i 
 monthString = ARGV[1]
@@ -10,17 +10,17 @@ monthsArray = ['января', 'февраля', 'марта', 'апреля', '
 
 month = monthsArray.index(monthString)
 
-if day  < 1 || day > 31
-	exit
-end
+# if day  < 1 || day > 31
+	# exit
+# end
 
-if !month
-	exit
-end
+# if !month
+	# exit
+# end
 
-if year < 1 || year > 2999
-	exit
-end
+# if year < 1 || year > 2999
+	# exit
+# end
 
 month += 1
 
