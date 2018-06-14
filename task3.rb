@@ -47,13 +47,17 @@ if days > 0
 
 	resultString += days.to_s + daysArray[formId]
 end
-if days > 0 || hours > 0
+if hours > 0
 	formId = gettFormId(hours)
 	resultString += hours.to_s + hoursArray[formId]
 end
-if days > 0 || hours > 0 || minutes > 0
+if minutes > 0
 	formId = gettFormId(minutes)
 	resultString += minutes.to_s + minutesArray[formId]
 end
-resultString += seconds.to_s + secondsArray[gettFormId(seconds)]
+if seconds > 0
+	formId = gettFormId(seconds)
+	resultString += seconds.to_s + secondsArray[formId]
+end
+resultString.rstrip!
 puts resultString
