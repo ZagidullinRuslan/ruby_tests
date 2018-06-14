@@ -1,5 +1,5 @@
 string = ARGV[0]
-if string.length === 1 || string.length === 0
+if string.length == 1 || string.length == 0
 	puts "YES"
 	exit
 end
@@ -11,7 +11,7 @@ until index == 0 do
     reverseString << string[index - 1]
     index -= 1
 end
-if string === reverseString
+if string == reverseString
 	puts "YES"
 	exit
 end

@@ -21,22 +21,22 @@ $thirdFormEnding = [0,5,6,7,8,9]
 $thirdFormEndingExtra = [11,12,13,14]
 def gettFormId(num)
 	for i in $thirdFormEndingExtra
-		if i === num
+		if i == num
 			return 2
 		end
 	end
 	for i in $thirdFormEnding
-		if (num-i)%10 === 0 && (num-i) >= 0
+		if (num-i)%10 == 0 && (num-i) >= 0
 			return 2 
 		end 
 	end	
 	for i in $secondFormEnding
-		if (num-i)%10 === 0 && (num-i) >= 0
+		if (num-i)%10 == 0 && (num-i) >= 0
 			return 1 
 		end 
 	end	
 	for i in $firstFormEnding
-		if (num-i)%10 === 0 && (num-i) >= 0
+		if (num-i)%10 == 0 && (num-i) >= 0
 			return 0 
 		end 
 	end	
